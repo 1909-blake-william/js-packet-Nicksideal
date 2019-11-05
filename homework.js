@@ -36,6 +36,10 @@
 // Define function substring(someStr, length, offset)
 // Return the substring contained between offset and (offset + length) inclusively.
 // If incorrect input is entered, use the alert function and describe why the input was incorrect.
+function substring (someStr, length, offset){
+    if(someStr != String || length != number || offset != number);
+    let newString= someStr.substring(length, (length+offset));
+}
 
 
 
@@ -43,6 +47,14 @@
 // Define function: isEven(someNum)
 // Return true if even, false if odd.
 // Do not use % operator.
+function isEven(someNum){
+    if(someNum%2===0){
+        console.log(true)
+    }else{
+        console.log(false)
+    }
+}
+
 
 
 // 7. Palindrome
@@ -71,7 +83,15 @@
 // *****
 //  ***
 //   *
-
+function printShape(shape, height, character){
+switch (shape){
+    case "Square":{
+        for (i=0; 1<height; i++){
+            console.log()//how to create a shape
+        }
+    }
+}
+}
 
 // 9. Object literal
 // Define function traverseObject(someObj)
@@ -84,7 +104,13 @@
 // Delete the third element in the array.
 // Print length
 // The lengths should be the same.
-
+function deleteElement(someArr){
+    console.log("array before deleting "+ someArr.length);
+    someArr.deleteElement(2,1);
+    console.log("array after 3rd element was deleted "+ someArr.length);
+}
+let arr = [1,2,3,4,5,6,];
+deleteElement(arr);
 
 // 11. Splice Element
 // Define function spliceElement(someArr)
@@ -92,16 +118,31 @@
 // Splice the third element in the array.
 // Print length
 // The lengths should be one less than the original length.
+function spliceElement(arr){
+    arr.splice(2,1);
+    console.log("length of array after splice " + arr.length);
+}
+let newArray = [1,2,3,4,5,6,]
+
+console.log("length of array before splice "+ arr.length);
+spliceElement(newArray);
 
 
 // 12. Defining an object using a constructor
 // Define a function Person(name, age)
 // The following line should set a Person object to the variable john:
 // 	let john = new Person("John", 30);
-
+function Person(name, age){
+    this.firstName = name;
+    this.age = age;
+}
+var person = new Person("John", 30);
 
 // 13. Defining an object using an object literal
 // Define function getPerson(name, age)
 // The following line should set a Person object to the variable john:
 // 	let john = getPerson("John", 30);
-
+function getPerson(name,age){
+    let  person = new person {firstname:name, ageOf: age};
+}
+getPerson("John", 30);
