@@ -37,7 +37,9 @@
 // Return the substring contained between offset and (offset + length) inclusively.
 // If incorrect input is entered, use the alert function and describe why the input was incorrect.
 function substring (someStr, length, offset){
-    if(someStr != String || length != number || offset != number);
+    if(someStr !== String || length !== number || offset !== number){
+        alert("Please enter the correct parameters as (String, Number, Number");
+    }
     let newString= someStr.substring(length, (length+offset));
 }
 
