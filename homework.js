@@ -17,7 +17,20 @@
 // Define function: bubbleSort(numArray)
 // Use the bubble sort algorithm to sort the array.
 // Return the sorted array.
+function bubbleSort(numArray) {
+    for (i = 0; i < numArray.length; i++) {
 
+
+        let swap = true
+        for (k = 0; k < numArray.length-1-i; i++) {
+            let first = numArray[k];
+            let second = numArray[k+1];
+            if(first>second){
+                numArray[i] += k
+            }
+        }
+    }
+}
 
 
 // 3. Reverse String
@@ -36,11 +49,11 @@
 // Define function substring(someStr, length, offset)
 // Return the substring contained between offset and (offset + length) inclusively.
 // If incorrect input is entered, use the alert function and describe why the input was incorrect.
-function substring (someStr, length, offset){
-    if(someStr !== String || length !== number || offset !== number){
+function substring(someStr, length, offset) {
+    if (someStr !== String || length !== number || offset !== number) {
         alert("Please enter the correct parameters as (String, Number, Number");
     }
-    let newString= someStr.substring(length, (length+offset));
+    let newString = someStr.substring(length, (length + offset));
 }
 
 
@@ -49,11 +62,11 @@ function substring (someStr, length, offset){
 // Define function: isEven(someNum)
 // Return true if even, false if odd.
 // Do not use % operator.
-function isEven(someNum){
-    if(someNum%2===0){
-        console.log(true)
-    }else{
-        console.log(false)
+function isEven(someNum) {
+    if (someNum % 2 === 0) {
+        return (true)
+    } else {
+        return (false)
     }
 }
 
@@ -62,7 +75,17 @@ function isEven(someNum){
 // 7. Palindrome
 // Define function isPalindrome(someStr)
 // Return true if someStr is a palindrome, otherwise return false
+function isPalindrome(someStr) {
+    let strLength = Math.floor(someStr.length / 2);
+    for (i = 0; i < strLength; i++) {
+        if (someStr[i] !== someStr[strLength - i - 1]) {
+            return false;
 
+        } else {
+            return true;
+        }
+    }
+}
 
 // 8. Shapes
 // Define function: printShape(shape, height, character)
@@ -85,19 +108,61 @@ function isEven(someNum){
 // *****
 //  ***
 //   *
-function printShape(shape, height, character){
-switch (shape){
-    case "Square":{
-        for (i=0; 1<height; i++){
-            console.log()//how to create a shape
-        }
+function printShape(shape, height, character) {
+    let item = [];
+    let finalShape = '';
+    switch (shape) {
+        case "square": {
+            for (i = 0; i < height; i++) {
+                item.push(character);
+
+            }
+            for (i = 0; i < height; i++) {
+                console.log(finalShape = item.join(""));//how to create a shape
+            }
+
+        } break;
+        case "triangle": {
+            for (i = 0; i < height; i++) {
+                item.push(character);
+                console.log(finalShape = item.join(""));
+
+            }
+
+        } break;
+        case "diamond": {//currently a mountain, need to make it into a diamond
+
+            let centerPoint = Math.floor(height / 2);
+            for (i = 0; i < height; i++) {
+                item.push(" ");
+            }
+            for (i = 0; i <= centerPoint; i++) {
+                item[centerPoint - i] = character;
+                item[i + centerPoint] = character;
+                console.log(finalShape = item.join(""))
+            }
+            for (i = centerPoint; i >= 0; i--) {
+                item[centerPoint - i] = " ";
+                item[i + centerPoint] = " ";
+                console.log(finalShape = item.join(""))
+            }
+
+        } break;
     }
 }
-}
-
+// printShape('square',4,'*')
 // 9. Object literal
 // Define function traverseObject(someObj)
 // Print every property and it's value.
+function traverseObject(someObj) {
+
+    const objArr = Object.entries(someObj);
+    for (let [object, count] of someObj) {
+        console.log(`the ${count} in this object is ${object}`)
+
+    }
+}
+
 
 
 // 10. Delete Element
@@ -106,12 +171,12 @@ switch (shape){
 // Delete the third element in the array.
 // Print length
 // The lengths should be the same.
-function deleteElement(someArr){
-    console.log("array before deleting "+ someArr.length);
-    someArr.deleteElement(2,1);
-    console.log("array after 3rd element was deleted "+ someArr.length);
+function deleteElement(someArr) {
+    console.log("array before deleting " + someArr.length);
+    someArr.deleteElement(2, 1);
+    console.log("array after 3rd element was deleted " + someArr.length);
 }
-let arr = [1,2,3,4,5,6,];
+let arr = [1, 2, 3, 4, 5, 6,];
 deleteElement(arr);
 
 // 11. Splice Element
@@ -120,13 +185,13 @@ deleteElement(arr);
 // Splice the third element in the array.
 // Print length
 // The lengths should be one less than the original length.
-function spliceElement(arr){
-    arr.splice(2,1);
+function spliceElement(arr) {
+    arr.splice(2, 1);
     console.log("length of array after splice " + arr.length);
 }
-let newArray = [1,2,3,4,5,6,]
+let newArray = [1, 2, 3, 4, 5, 6,]
 
-console.log("length of array before splice "+ arr.length);
+console.log("length of array before splice " + newArray.length);
 spliceElement(newArray);
 
 
@@ -134,7 +199,7 @@ spliceElement(newArray);
 // Define a function Person(name, age)
 // The following line should set a Person object to the variable john:
 // 	let john = new Person("John", 30);
-function Person(name, age){
+function Person(name, age) {
     this.firstName = name;
     this.age = age;
 }
@@ -144,7 +209,11 @@ var person = new Person("John", 30);
 // Define function getPerson(name, age)
 // The following line should set a Person object to the variable john:
 // 	let john = getPerson("John", 30);
-function getPerson(name,age){
-    let  person = new person {firstname:name, ageOf: age};
-}
-getPerson("John", 30);
+// function getPerson(name,age){
+//     let  person = new person 
+//     {
+//         "firstName":name, 
+//         "ageOf": age,
+// }
+// }
+// getPerson("John", 30);
