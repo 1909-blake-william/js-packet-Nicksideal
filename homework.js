@@ -10,17 +10,17 @@
 // 1. Fibonacci
 // Define function: fib(n)
 // Return the nth number in the fibonacci sequence.
-function fib(n){
-    let fibArr=[0,1]
-    let sum =0;
-    for(let i =1; i<n-1;i++){
-        sum = fibArr[i]+fibArr[i-1];
+function fib(n) {
+    let fibArr = [0, 1]
+    let sum = 0;
+    for (let i = 1; i < n - 1; i++) {
+        sum = fibArr[i] + fibArr[i - 1];
         fibArr.push(sum);
-        
+
     }
     console.log(sum)
     return sum;
-    
+
 }
 
 
@@ -34,26 +34,38 @@ function bubbleSort(numArray) {
 
 
         let swap = true
-        for (k = 0; k < numArray.length-1-i; i++) {
+        for (k = 0; k < numArray.length - 1 - i; i++) {
             let first = numArray[k];
-            let second = numArray[k+1];
-            if(first>second){
-                
+            let second = numArray[k + 1];
+            if (first > second) {
+
                 numArray[k] = second;
-                numArray[k+1] = first;
-                swap=true;
+                numArray[k + 1] = first;
+                swap = true;
             }
         }
-        if(swap!==true){
-                return numArray;
+        if (swap !== true) {
+            return numArray;
         }
     }
-}return numArray
+} return numArray;
 
 
 // 3. Reverse String
 // Define function: reverseStr(someStr)
 // Reverse and return the String.
+function reverseStr(someStr) {
+    let strArr = someStr.split("");
+    let length = Math.floor(strArr.length / 2);
+    for (let i = 0; i <= length; i++) {
+        let temp = strArr[strArr.length - i];
+        strArr[strArr.length - i] = strArr[i];
+        strArr[i] = temp;
+    }
+    let string = strArr.toString();
+    string = string.replace(",", "");
+    return (string);
+}
 
 
 
