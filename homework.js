@@ -47,8 +47,8 @@ function bubbleSort(numArray) {
         if (swap !== true) {
             return numArray;
         }
-    }
-} return numArray;
+    } return numArray
+}
 
 
 // 3. Reverse String
@@ -57,13 +57,14 @@ function bubbleSort(numArray) {
 function reverseStr(someStr) {
     let strArr = someStr.split("");
     let length = Math.floor(strArr.length / 2);
-    for (let i = 0; i <= length; i++) {
-        let temp = strArr[strArr.length - i];
-        strArr[strArr.length - i] = strArr[i];
+    for (let i = 0; i < length; i++) {
+        let temp = strArr[strArr.length - 1 - i];
+        console.log(strArr[i]);
+        strArr[strArr.length - 1 - i] = strArr[i];
         strArr[i] = temp;
     }
     let string = strArr.toString();
-    string = string.replace(",", "");
+    string = string.replace(/,/g, '');
     return (string);
 }
 
@@ -180,7 +181,7 @@ function printShape(shape, height, character) {
         } break;
     }
 }
-// printShape('square',4,'*')
+
 // 9. Object literal
 // Define function traverseObject(someObj)
 // Print every property and it's value.
@@ -201,13 +202,13 @@ function traverseObject(someObj) {
 // Delete the third element in the array.
 // Print length
 // The lengths should be the same.
-function deleteElement(someArr) {
-    console.log("array before deleting " + someArr.length);
-    someArr.deleteElement(2, 1);
-    console.log("array after 3rd element was deleted " + someArr.length);
+function deletElement(someArr) {
+    console.log("array before deleting " + someArr + " its length is " + someArr.length);
+    delete someArr[2];
+    console.log("array after 3rd element was deleted " + someArr + " its length is " + someArr.length);
 }
 let arr = [1, 2, 3, 4, 5, 6,];
-deleteElement(arr);
+deletElement(arr);
 
 // 11. Splice Element
 // Define function spliceElement(someArr)
@@ -238,12 +239,12 @@ var person = new Person("John", 30);
 // 13. Defining an object using an object literal
 // Define function getPerson(name, age)
 // The following line should set a Person object to the variable john:
-// 	let john = getPerson("John", 30);
-// function getPerson(name,age){
-//     let  person = new person 
-//     {
-//         "firstName":name, 
-//         "ageOf": age,
-// }
-// }
-// getPerson("John", 30);
+let john = getPerson("John", 30);
+function getPerson(name, age) {
+    let person = 
+    {
+        Name: name,
+        ageOf: age
+    }
+    console.log(person);
+}
